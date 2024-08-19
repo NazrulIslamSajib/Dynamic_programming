@@ -62,7 +62,7 @@ int main()
        {
            cin>>a[i];
        }
-       init(1,1,n);
+       init(1,1,n);//O(n*log2(n));
        while(q--)
        {
            int type;
@@ -71,12 +71,12 @@ int main()
            {
                long long k,u;
                cin>>k>>u;
-               update(1,1,n,k,u);
+               update(1,1,n,k,u);//O(log2(n));
            }
            else
            {
                int i,j;
-               cin>>i>>j;
+               cin>>i>>j;//O(log2(n))
                cout<<ask(1,1,n,i,j)<<endl;
            }
        }
