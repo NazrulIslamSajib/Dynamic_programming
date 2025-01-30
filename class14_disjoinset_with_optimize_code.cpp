@@ -8,14 +8,27 @@ public:
         if(par[u]==u) return u; 
         return par[u]=find_par(par[u]);
     } 
-    //// union by size jar size choto take boro sub tree er modde rakhte raktechi
+    //// union by size jar size choto take boro sub tree er modde rakhte raktechi 
+
     void uni(int u,int v)
     {   
         if(sz[u]<sz[v]) swap(u,v);
         par[v]=u; 
         sz[u]+=sz[v];
     } 
-
+    /* 
+    when you will get wrong answer or run time . then please try it 
+    void uni(int u,int v)
+{
+     u=find_par(u);
+     v=find_par(v);
+    if(u!=v)
+    {
+    if(sz[u]<sz[v]) swap(u,v);
+    par[v]=u;
+    sz[u]+=sz[v];
+    }
+} */
     int findCircleNum(vector<vector<int>>& g) { 
      int n=g.size();
      for(int i=0;i<n;i++)
